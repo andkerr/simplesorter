@@ -1,12 +1,8 @@
-function main() {
-    let algorithms = [MergeSort, HeapSort, QuickSort];
-
-    let vis = new Visualizer('canvas', msPerInterval = 150);
+(function(global) {
+    let vis = new global.visualizer('canvas', msPerInterval = 150);
     vis.setInvertYAxis(true);
     vis.setDrawBars(true);
     vis.initFromCellDimensions(15, 15, 3);
     vis.drawSortedData();
-    vis.mountButtons(algorithms);
-}
-
-document.addEventListener('DOMContentLoaded', main);
+    vis.mountButtons(global.algorithms);
+})(window);
